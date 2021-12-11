@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/employee_nav_graph"
+    app:startDestination="@id/employeeListFragment">
+
+    <fragment
+        android:id="@+id/employeeListFragment"
+        android:name="com.example.whiterabbitmachinetest.features.employeecollection.views.fragments.EmployeeListFragment"
+        android:label="Employees"
+        tools:layout="@layout/fragment_employee_list" >
+        <action
+            android:id="@+id/action_employeeListFragment_to_employeeDetailFragment"
+            app:destination="@id/employeeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeDetailFragment"
+        android:name="com.example.whiterabbitmachinetest.features.employeecollection.views.fragments.EmployeeDetailFragment"
+        android:label="Employee details"
+        tools:layout="@layout/fragment_employee_detail" >
+        <argument
+            android:name="data"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="com.example.whiterabbitmachinetest.features.employeecollection.models.EmployeeCollection" />
+    </fragment>
+</navigation>
